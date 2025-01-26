@@ -11,7 +11,8 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@sentry/node": "^8.51.0",
+    "@sentry/node": "^7.120.3",
+    "@sentry/profiling-node": "^8.51.0",
     "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
     "cloudinary": "^1.41.3",

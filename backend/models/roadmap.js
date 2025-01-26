@@ -1,14 +1,14 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const roadmapSchema = new mongoose.Schema({
   title: { type: String, required: true },
-  description: { type: String, required: true },
+  description: { type: String, required: true }, // AI-generated description
   steps: [
     {
       title: { type: String, required: true },
-      description: { type: String, required: true },
-      resources: [{ type: String }],
-      duration: { type: String },
+      description: { type: String },
+      resources: [{ type: String }], // Links to resources
+      duration: { type: String }, // e.g., "2 weeks"
     },
   ],
   createdBy: { type: mongoose.Schema.Types.ObjectId, ref: "User" },

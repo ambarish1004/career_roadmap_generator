@@ -1,10 +1,39 @@
-const express = require('express');
-const Roadmap = require('../models/roadmap');
-const authenticate = require('../middleware/authenticate');
+const express = require("express");
+const Roadmap = require("../models/roadmap");
+const authenticate = require("../middleware/authenticate");
+const generateRoadmap = require("../utils/generateRoadmap");
+
 const router = express.Router();
 
-// Create a new roadmap
-router.post('/', authenticate, async (req, res) => {
+// Generate Roadmap (AI-powered)
+router.post("/generate", authenticate, async (req, res) => {
+  const { goal, skills, interests } = req.body;
+
+  if (!goal) {
+    return res.status(400).json({ message: "Career goal is required" });
+  }
+
+  try {
+    const userInput = `Career Goal: ${goal}. Skills: ${skills || "none"}. Interests: ${interests || "none"}.`;
+    const generatedText = await generateRoadmap(userInput);
+
+    const newRoadmap = new Roadmap({
+      title: goal,
+      description: generatedText,
+      createdBy: req.user.id,
+      steps: [], // Optional: Parse the AI-generated text into steps
+      isPublic: true,
+    });
+
+    await newRoadmap.save();
+    res.status(201).json({ message: "Roadmap generated successfully", roadmap: newRoadmap });
+  } catch (error) {
+    res.status(500).json({ message: "Failed to generate roadmap", error: error.message });
+  }
+});
+
+// Create a new roadmap (Manual Entry)
+router.post("/", authenticate, async (req, res) => {
   const { title, description, steps, isPublic } = req.body;
 
   if (!title || !description) {
@@ -28,9 +57,9 @@ router.post('/', authenticate, async (req, res) => {
 });
 
 // Fetch all roadmaps
-router.get('/', authenticate, async (req, res) => {
+router.get("/", authenticate, async (req, res) => {
   try {
-    const roadmaps = await Roadmap.find().populate('createdBy', 'name email');
+    const roadmaps = await Roadmap.find().populate("createdBy", "name email");
     res.status(200).json({ roadmaps });
   } catch (error) {
     res.status(500).json({ message: "Server error", error: error.message });
@@ -38,11 +67,11 @@ router.get('/', authenticate, async (req, res) => {
 });
 
 // Fetch a specific roadmap
-router.get('/:id', authenticate, async (req, res) => {
+router.get("/:id", authenticate, async (req, res) => {
   const { id } = req.params;
 
   try {
-    const roadmap = await Roadmap.findById(id).populate('createdBy', 'name email');
+    const roadmap = await Roadmap.findById(id).populate("createdBy", "name email");
     if (!roadmap) {
       return res.status(404).json({ message: "Roadmap not found" });
     }
@@ -54,7 +83,7 @@ router.get('/:id', authenticate, async (req, res) => {
 });
 
 // Update a roadmap
-router.put('/:id', authenticate, async (req, res) => {
+router.put("/:id", authenticate, async (req, res) => {
   const { id } = req.params;
   const { title, description, steps, isPublic } = req.body;
 
@@ -76,7 +105,7 @@ router.put('/:id', authenticate, async (req, res) => {
 });
 
 // Delete a roadmap
-router.delete('/:id', authenticate, async (req, res) => {
+router.delete("/:id", authenticate, async (req, res) => {
   const { id } = req.params;
 
   try {
