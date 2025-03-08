@@ -41,3 +41,63 @@
 2025-01-28T17:23:15.078Z [INFO]: Server running on port 5000
 2025-01-30T03:22:37.247Z [INFO]: Server running on port 5000
 2025-01-30T03:22:40.304Z [INFO]: Closing server...
+2025-02-03T07:00:02.506Z [INFO]: Server running on port 5000
+2025-02-03T07:00:04.004Z [INFO]: Closing server...
+2025-02-03T07:02:23.572Z [INFO]: Server running on port 5000
+2025-02-03T07:07:39.073Z [INFO]: Closing server...
+2025-03-06T18:03:11.240Z [INFO]: Server running on port 5000
+2025-03-06T18:03:19.612Z [INFO]: Closing server...
+2025-03-06T18:11:53.761Z [INFO]: Server running on port 5000
+2025-03-06T18:12:59.152Z [INFO]: Closing server...
+2025-03-06T18:25:06.614Z [INFO]: Server running on port 5000
+2025-03-06T18:25:15.029Z [INFO]: Closing server...
+2025-03-06T18:25:24.298Z [INFO]: Server running on port 5000
+2025-03-06T18:25:33.544Z [INFO]: Closing server...
+2025-03-06T18:27:26.304Z [INFO]: Server running on port 5000
+2025-03-06T18:45:47.438Z [ERROR]: 20630000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\ws\deps\openssl\openssl\ssl\record\rec_layer_s3.c:1590:SSL alert number 80
+ - /api/auth/signup - POST - ::1
+2025-03-06T18:45:50.054Z [ERROR]: 20630000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\ws\deps\openssl\openssl\ssl\record\rec_layer_s3.c:1590:SSL alert number 80
+ - /api/auth/signup - POST - ::1
+2025-03-06T18:45:51.145Z [ERROR]: 20630000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\ws\deps\openssl\openssl\ssl\record\rec_layer_s3.c:1590:SSL alert number 80
+ - /api/auth/signup - POST - ::1
+2025-03-06T18:45:51.763Z [ERROR]: 20630000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\ws\deps\openssl\openssl\ssl\record\rec_layer_s3.c:1590:SSL alert number 80
+ - /api/auth/signup - POST - ::1
+2025-03-06T18:45:51.981Z [ERROR]: 20630000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\ws\deps\openssl\openssl\ssl\record\rec_layer_s3.c:1590:SSL alert number 80
+ - /api/auth/signup - POST - ::1
+2025-03-06T18:45:53.885Z [ERROR]: 20630000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\ws\deps\openssl\openssl\ssl\record\rec_layer_s3.c:1590:SSL alert number 80
+ - /api/auth/signup - POST - ::1
+2025-03-06T18:46:50.088Z [ERROR]: 20630000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\ws\deps\openssl\openssl\ssl\record\rec_layer_s3.c:1590:SSL alert number 80
+ - /api/auth/signup - POST - ::1
+2025-03-06T18:46:51.165Z [ERROR]: 20630000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\ws\deps\openssl\openssl\ssl\record\rec_layer_s3.c:1590:SSL alert number 80
+ - /api/auth/signup - POST - ::1
+2025-03-06T18:46:51.773Z [ERROR]: 20630000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\ws\deps\openssl\openssl\ssl\record\rec_layer_s3.c:1590:SSL alert number 80
+ - /api/auth/signup - POST - ::1
+2025-03-06T18:46:52.008Z [ERROR]: 20630000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\ws\deps\openssl\openssl\ssl\record\rec_layer_s3.c:1590:SSL alert number 80
+ - /api/auth/signup - POST - ::1
+2025-03-06T18:46:53.901Z [ERROR]: 20630000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\ws\deps\openssl\openssl\ssl\record\rec_layer_s3.c:1590:SSL alert number 80
+ - /api/auth/signup - POST - ::1
+2025-03-06T18:47:04.778Z [INFO]: Closing server...
+2025-03-06T18:47:17.477Z [ERROR]: 20630000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\ws\deps\openssl\openssl\ssl\record\rec_layer_s3.c:1590:SSL alert number 80
+ - /api/auth/signup - POST - ::1
+2025-03-06T18:47:20.107Z [ERROR]: 20630000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\ws\deps\openssl\openssl\ssl\record\rec_layer_s3.c:1590:SSL alert number 80
+ - /api/auth/signup - POST - ::1
+2025-03-06T18:47:21.176Z [ERROR]: 20630000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\ws\deps\openssl\openssl\ssl\record\rec_layer_s3.c:1590:SSL alert number 80
+ - /api/auth/signup - POST - ::1
+2025-03-06T18:47:21.781Z [ERROR]: 20630000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\ws\deps\openssl\openssl\ssl\record\rec_layer_s3.c:1590:SSL alert number 80
+ - /api/auth/signup - POST - ::1
+2025-03-06T18:47:26.786Z [INFO]: Server closed.
+2025-03-07T03:38:56.513Z [INFO]: Server running on port 5000
+2025-03-07T03:41:22.476Z [INFO]: Server running on port 5000
+2025-03-07T03:42:05.822Z [ERROR]: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-73698519344sm2162170b3a.154 - gsmtp - /api/auth/signup - POST - ::1
+2025-03-07T03:43:15.145Z [INFO]: Closing server...
+2025-03-07T03:44:29.595Z [INFO]: Server running on port 5000
+2025-03-07T03:44:35.305Z [ERROR]: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-73698514f6esm2235686b3a.142 - gsmtp - /api/auth/signup - POST - ::1
+2025-03-07T06:13:52.381Z [INFO]: Closing server...
+2025-03-07T06:28:45.809Z [INFO]: Server running on port 5000
+2025-03-07T06:29:07.846Z [INFO]: Closing server...
+2025-03-07T06:29:14.726Z [INFO]: Server running on port 5000
+2025-03-07T10:40:44.275Z [INFO]: Server running on port 5000
+2025-03-07T19:16:01.633Z [INFO]: Server running on port 5000
+2025-03-08T07:13:55.541Z [INFO]: Closing server...

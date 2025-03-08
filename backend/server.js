@@ -6,6 +6,10 @@ const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
 const cookieParser = require("cookie-parser");
 const mongoose = require("mongoose");
+const session = require("express-session");
+const passport = require("passport");  // ✅ Import Passport.js
+require("./config/passport");  // ✅ Load Passport strategies
+
 const connectDB = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
 const userRoutes = require("./routes/userRoutes");
@@ -16,26 +20,40 @@ const gracefulShutdown = require("./utils/gracefulShutdown");
 const roadmapRoutes = require("./routes/roadmapRoutes");
 const generateRoadmap = require("./utils/generateRoadmap");
 const path = require("path");
+const cors = require("cors");
+
 const userInput = "Full-Stack Developer";
 
-// Generate roadmap
-generateRoadmap(userInput)
-  .then((roadmap) => console.log(roadmap))
-  .catch((error) => console.error(error.message));
+// ✅ Initialize Express app
+const app = express();
 
-// Initialize express app
-const app = express();  // <-- Move this line here, before using app
+// ✅ CORS Middleware
+app.use(cors({
+  origin: "http://localhost:5173",
+  credentials: true
+}));
 
-// Serve static files
-app.use(express.static(path.join(__dirname, 'public')));  // <-- Now this is after the initialization of `app`
+// ✅ Serve static files
+app.use(express.static(path.join(__dirname, "public")));
 
-// Load environment variables
+// ✅ Load environment variables
 dotenv.config();
 
-// Connect to MongoDB
+// ✅ Connect to MongoDB
 connectDB();
 
-// Middleware
+// ✅ Session Middleware (Required for Passport.js)
+app.use(session({
+  secret: process.env.SESSION_SECRET || "your_secret_key",
+  resave: false,
+  saveUninitialized: true
+}));
+
+// ✅ Initialize Passport.js for OAuth Authentication
+app.use(passport.initialize());
+app.use(passport.session());
+
+// ✅ Middleware
 app.use(express.json());
 app.use(cookieParser());
 app.use(
@@ -49,70 +67,15 @@ app.use(
   })
 );
 
-
-// app.use(
-//   helmet({
-//     contentSecurityPolicy: {
-//       directives: {
-//         defaultSrc: ["'self'"],
-//         scriptSrc: ["'self'", "'unsafe-inline'", "https://trustedcdn.example.com"],
-//         styleSrc: ["'self'", "https://trustedcdn.example.com"],
-//         connectSrc: ["'self'", "https://api.example.com"],
-//         imgSrc: ["'self'", "data:", "https://trustedimages.com"],
-//         frameAncestors: ["'none'"],
-//       },
-//     },
-//   })
-// );
-
-
-
-// app.use(
-//   helmet({
-//     contentSecurityPolicy: {
-//       directives: {
-//         defaultSrc: ["'self'"],
-//         scriptSrc: ["'self'", "'unsafe-eval'"], // ✅ Allow eval()
-//         styleSrc: ["'self'", "https://trustedcdn.example.com", "'unsafe-inline'"], // ✅ Allow inline styles
-//         imgSrc: ["'self'", "data:"], // ✅ Allow images & base64
-//       },
-//     },
-//   })
-// );
-
-// app.use(
-//   helmet({
-//     contentSecurityPolicy: false // Removed CSP restrictions
-//   })
-// );
-
-
-// app.use(
-//   helmet({
-//     contentSecurityPolicy: {
-//       directives: {
-//         defaultSrc: ["'self'"],
-//         scriptSrc: ["'self'", "'unsafe-eval'"], // ✅ Allows eval()
-//         styleSrc: ["'self'", "'unsafe-inline'"], // ✅ Allows inline styles
-//         imgSrc: ["'self'", "data:"],
-//       },
-//     },
-//   })
-// );
-
-
-
-
-
-// Rate Limiting
+// ✅ Rate Limiting
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100, // Limit each IP to 100 requests per windowMs
+  max: 100,
   message: "Too many requests from this IP, please try again later.",
 });
 app.use(limiter);
 
-// Health-Check Endpoint
+// ✅ Health-Check Endpoint
 app.get("/api/health", (req, res) => {
   res.status(200).json({
     status: "Healthy",
@@ -121,21 +84,21 @@ app.get("/api/health", (req, res) => {
   });
 });
 
-// Routes
+// ✅ Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/roadmaps", roadmapRoutes);
 
-// Error Handling Middleware
+// ✅ Error Handling Middleware
 app.use(errorHandler);
 
-// Start Server
+// ✅ Start Server
 const PORT = process.env.PORT || 5000;
 const server = app.listen(PORT, () => {
   logger.info(`Server running on port ${PORT}`);
 });
 
-// Graceful Shutdown
+// ✅ Graceful Shutdown
 process.on("SIGINT", () => gracefulShutdown(server, mongoose));
 process.on("SIGTERM", () => gracefulShutdown(server, mongoose));
