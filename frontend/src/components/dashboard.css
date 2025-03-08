@@ -1,0 +1,158 @@
+*{
+    margin-left: 0px;
+    padding: 0px;
+}
+
+.main-container{
+    height: 100%;
+    width: 100%;
+    background-color: #1E1E2E;
+}
+
+.left-sidebar{
+    position: fixed;
+    height: 728px;
+    width: 250px;
+    background-color: #374151;
+    border: 1px solid #949EA5;
+}
+
+.main-content{
+    height: 100%;
+    width: 1285px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 250px;
+}
+
+navbar{
+    width: 1285px;
+    height: 123px;
+    background-color: #1C2333;
+    /* border: 2px solid white; */
+    position: fixed;
+}
+
+
+.right-sidebar{
+    height: 80vh;
+    width: 250px;
+    /* background-color: #2F3A4A; */
+    margin-left: 992px;
+    position: fixed;
+}
+.upper-right-sidebar{
+    height: 40vh;
+    width: 250px;
+    background-color: #2F3A4A;
+    /* margin-left: 14px; */
+}
+.bottom-right-sidebar{
+    margin-top: 14px;
+    height: 40vh;
+    width: 250px;
+    background-color: #2F3A4A;
+    /* margin-left: 14px; */
+}
+
+.dashboard-content{
+    height: 100vh;
+    width: 1265px;
+    /* border: 2px solid white;; */
+    padding: 14px;
+    display: flex;
+    margin-top: 123px;
+}
+
+.overview, .mentoring{
+    height: 67vh;
+    width: 978px;
+    background-color: #2F3A4A;
+}
+
+.mentoring{
+    height: 50vh;
+    margin-top: 14px;
+}
+
+.main-search-field{
+    margin-top: 5px;
+    margin-left: 5px;
+    height: 31px;
+    width: 527px;
+    background-color: #CCD2D7;
+    color: #435A6E;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+}
+
+#search-icon{
+    height: 25px;
+    width: 25px;
+}
+
+#search-label{
+    padding-left: 5px;
+    color: 435A6E
+}
+
+.main-search-field-line{
+    height: 44px;
+    width: 1240px;
+    /* border: 2px solid white; */
+    display: flex;
+    /* align-items: center; */
+}
+
+.user-msg-notification{
+    height: 31px;
+    width: 250px;
+    /* border: 1px solid white; */
+    margin-left: 460px;
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.notification-logo, .msg-logo{
+    height:31px;
+    width:31px;
+    /* color: white; */
+}
+
+.user-profile{
+    height:31px;
+    width:31px;
+    border-radius: 100%;
+    border: 2px solid white;
+
+}
+
+#user-img-imgtag{
+    border-radius: 100%;
+}
+
+.dashboard-name{
+    height: 50px;
+    width: 1240px;
+    color: white;
+    margin-top: 29px;
+    margin-left: 10px;
+    /* border: 2px solid white; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#Aarohan-name{
+    font-size: 32px;
+    font-weight: 500;
+}
+
+#Aarohan-quote{
+    font-size: 24px;
+    font-weight: 300;
+}
+

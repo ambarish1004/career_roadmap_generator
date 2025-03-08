@@ -3,11 +3,12 @@
     padding: 0;
 }
 
-body {
-    background-color: white;
-    color: black;
+/* body.dark-mode {
+    background-color: black;
+    color: white;
   }
-  
+   */
+
 .main-container{
     width: 100%;
     height: 100%;
@@ -18,7 +19,8 @@ body {
 
 .container{
     font-family: 'Istok Web', sans-serif;
-    background-color: #F8F9FA;
+    /* background-color: #F8F9FA; */
+    background-color: #1E1E2E;
     height: 100vh;
     display: flex;
     width: 50%;
@@ -35,25 +37,29 @@ body {
     /* position: absolute; */
     top: 0;
     transition: transform 0.5s ease;
+    color: #CCD2D7;
 }
 
 .login {
-    background-color: #F8F9FA;
+    /* background-color: #F8F9FA;*/
+    background-color: #1E1E2E;
     transform: translateX(0);
     display: flex;
     flex-direction: column;
 }
 
 .signup {
-    background-color: #F8F9FA;
+    /* background-color: #F8F9FA; */
+    background-color: #1E1E2E;
     transform: translateX(0%);
 }
 
 .logo_place{
-    width: 100%;
+    width: 98%;
     height: 50px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     margin-left: 5px;
 }
 
@@ -74,9 +80,54 @@ body {
     padding-top: 30px;
 }
 
+.tobbglebtn {
+    height: 23px;
+    width: 50px;
+    border: 2px solid white;
+    border-radius: 20px;
+    position: relative;
+    background-color: #333;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.tobbglebtn:hover{
+    box-shadow: 0px 0px 10px rgb(45, 201, 212);
+}
+
+.toggle-circular-switch {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    /* top: 50%; */
+    /* transform: translateY(-50%); */
+    /* left: 0px; Default position */
+    transition: background-color box-shadow left 0.8s ease-in-out;
+}
+
+.move-right {
+    left: 8px;
+}
+
+
+/* 🔥 Optional: Change background when toggling */
+.dark-mode .tobbglebtn {
+    background-color: #fff;  
+    border-color: #222;
+    box-shadow: 0px 0px 10px rgb(27, 28, 28);;
+}
+
+.dark-mode .toggle-circular-switch {
+    background-color: #222;
+}
+
 #email_login,#email_signup, #confirmPassword, #password, #name{
     font-family: 'Istok Web', sans-serif;
-    background-color: #c5c4c4;
+    background-color: #374151;
     border-style: none;
     border-radius: 5px;
     width: 450px;
@@ -84,8 +135,8 @@ body {
 }
 
 #email_login:hover, #email_signup:hover, #confirmPassword:hover, #password:hover, #name:hover {
-    background-color: #F8F9FA;
-    border: 2px solid black;
+    background-color: #435A6E;
+    border: 2px solid #949EA5;
 }
 
 #labelEmail, #labelPassword{
@@ -124,7 +175,7 @@ body {
 }
 
 .forget h5{
-    color: #373737;
+    color:#CCD2D7;
     font-weight: 300;
     cursor: pointer;
 }
@@ -140,7 +191,7 @@ body {
     display: inline-block;
     width: 20px;
     height: 20px;
-    border: 2px solid #373737;
+    border: 2px solid #CCD2D7;
     border-radius: 3px;
     position: relative;
     cursor: pointer;
@@ -172,6 +223,9 @@ body {
     border-radius: 5px;
     border-style: none;
 }
+#loginBtn:hover, #signupBtn:hover{
+    box-shadow: 0px 0px 8px rgb(159, 185, 242);
+}
 
 #signupBtn{
     margin-top: 25px;
@@ -194,12 +248,12 @@ body {
     margin-top: 15px;
     height: 1px;
     width: 40%;
-    background-color: rgb(46, 46, 46);
+    background-color: #CCD2D7;
 }
 
-.using_other_sites{
+.using_other_sites, .using_other_sites-in-signup{
     /* margin-top: px; */
-    height: 180px;
+    height: 220px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -208,12 +262,16 @@ body {
     /* border: 2px solid black; */
 }
 
+.using_other_sites-in-signup{
+    height: 100px;
+}
+
 .google, .facebook, .apple{
     cursor: pointer;
     margin-top: 20px;
     height: 25px;
     width: 450px;
-    border: 2px solid black;
+    border: 2px solid #949EA5;
     border-radius: 5px;
     display: flex;
     justify-content: center;
@@ -244,7 +302,7 @@ body {
 }
 
 #SignUpLink{
-  color:#0F0D8B;  
+  color:#5653FF;  
 }
 
 
@@ -308,8 +366,9 @@ body {
 }
 
 .go_to_login{
-    height: 80px;
+    height: 120px;
     width: 100%;
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -342,8 +401,6 @@ body {
     color: red;
 }
 
-
-
 /* .slider {
     position: absolute;
     top: 0;
@@ -369,3 +426,4 @@ body {
 /* .hidden {
     display: none;
 } */
+
