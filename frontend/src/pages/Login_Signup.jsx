@@ -5,6 +5,7 @@ import "../components/darkStyle.css";
 import axios from "../services/axios";
 import "../index.css";
 import Aarohan_name from "../assets/Aarohan_name.png";
+import White_Apple_logo from "../assets/White_Apple_logo.png";
 import Apple_logo from "../assets/Apple_logo.png";
 import Facebook_icon from "../assets/Facebook_icon.png";
 import Google_icon from "../assets/Google_icon.png";
@@ -141,7 +142,7 @@ useEffect(() => {
             <h5>Continue with Facebook</h5>
           </div>
           <div className="apple" onClick={() => handleOAuthLogin("apple")}>
-            <img id="appleId" src={Apple_logo} alt="apple logo"/>
+            <img id="appleId" src={White_Apple_logo} alt="apple logo"/>
             <h5>Continue with Apple</h5>
           </div>
         </div>
@@ -234,7 +235,7 @@ useEffect(() => {
                 <h5>Continue with Facebook</h5>
               </div>
               <div className="apple" onClick={() => handleOAuthLogin("apple")}>
-                <img id="appleId" src={Apple_logo} alt="apple logo"/>
+                <img id="appleId" src={White_Apple_logo} alt="apple logo"/>
                 <h5>Continue with Apple</h5>
               </div>
             </div>

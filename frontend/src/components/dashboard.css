@@ -3,6 +3,72 @@
     padding: 0px;
 }
 
+.left-sidebar-content{
+    width: 90%;
+    height: 100%;
+}
+
+.user-profile-left-sidebar{
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    cursor: pointer;
+}
+
+#user-name-left-sidebar{
+    margin-left: 10px;
+    font-weight: 400;
+    color:#CCD2D7;
+    cursor: pointer;
+}
+
+.other-navbar-content{
+    height: 500px;
+    width:100%;
+    /* border: 2px solid white; */
+    margin-top: 20px;
+}
+
+.settings-logout{
+    height: 100px;
+    width:100%;
+    /* border: 2px solid white; */
+    margin-top: 20px;
+}
+
+#home, #chat-with-AI,#community-forum,#schedule-mentor-session,#explore-career-paths,#my-roadmaps,#technical-news, #settings-opt, #logout-opt, .features{
+    margin-top: 20px;
+    height:35px;
+    width: 100%;
+    /* border: 1px solid white; */
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 400;
+    color: #CCD2D7;
+    cursor: pointer;
+}
+
+.features{
+    color: aliceblue;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+#home-logo, #chat-with-AI-logo,#community-forum-logo,#schedule-mentor-session-logo,#explore-career-paths-logo,#my-roadmaps-logo,#technical-news-logo, #settings-opt-logo, #logout-opt-logo{
+    height:25px;
+    width:25px;
+    margin-right: 10px;
+}
+
+#line{
+    margin-top: 20px;
+    height: 2px;
+    width: 100%;
+    background-color: #949EA5;
+}
+
 .main-container{
     height: 100%;
     width: 100%;
@@ -15,6 +81,9 @@
     width: 250px;
     background-color: #374151;
     border: 1px solid #949EA5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .main-content{
