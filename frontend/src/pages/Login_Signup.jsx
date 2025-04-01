@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../components/darkStyle.css";
-// import "../components/style.css"; // Import the regular CSS file
+import "../components/style.css"; // Import the regular CSS file
 import axios from "../services/axios";
 import "../index.css";
 import Aarohan_name from "../assets/Aarohan_name.png";
@@ -27,21 +27,39 @@ const Login_Signup = () => {
         const newMode = !prevMode;
         localStorage.setItem("theme", newMode ? "dark" : "light");
 
-        // Add or remove class from <body>
-        document.body.classList.toggle("dark-mode", newMode);
+        // Ensure class is properly added/removed
+        if (newMode) {
+            document.body.classList.add("dark-mode");
+        } else {
+            document.body.classList.remove("dark-mode");
+        }
 
         return newMode;
     });
 };
 
-useEffect(() => {
-    // Load theme from localStorage on page load
-    const savedTheme = localStorage.getItem("theme") || "light";
-    const isDark = savedTheme === "dark";
+const [loading, setLoading] = useState(false);
 
-    setIsDarkMode(isDark);
-    document.body.classList.toggle("dark-mode", isDark);
+    const handleAction = async (action) => {
+        setLoading(true); // Show loading spinner
+        await new Promise((resolve) => setTimeout(resolve, 2000)); // Simulating API request
+        setLoading(false); // Hide loading spinner
+    };
+
+
+useEffect(() => {
+  const savedTheme = localStorage.getItem("theme") || "light";
+  const isDark = savedTheme === "dark";
+
+  setIsDarkMode(isDark);
+
+  if (isDark) {
+      document.body.classList.add("dark-mode");
+  } else {
+      document.body.classList.remove("dark-mode");
+  }
 }, []);
+
   const handleSlide = (login) => {
     setIsLogin(login);
   };
@@ -84,7 +102,7 @@ useEffect(() => {
       <div className={`login ${isLogin ? "" : "hidden"}`}>
         <div className="logo_place">
           <img className="logo" src={Logo} alt="Logo" />
-          <div className="tobbglebtn" onClick={toggleTheme}>
+          <div className="togglebtn" onClick={toggleTheme}>
             <div className={`toggle-circular-switch ${isDarkMode ? "move-right" : ""}`}></div>
           </div>
         </div>
@@ -152,7 +170,7 @@ useEffect(() => {
             <h4>
               Are you new here?
             </h4>
-            <Link id="SignUpLink" onClick={() => handleSlide(false)}>Sign Up</Link>
+            <Link id="SignUpLink" onClick={() => handleSlide(false)}><h2>Sign Up</h2></Link>
           </div>
         </div>
       </div>
@@ -173,8 +191,8 @@ useEffect(() => {
                 <h1 id="quote_slide">"Ascend the ladder of Knowledge"</h1>
             </div>
             <div id="welcome_Text">
-                <h2>WELCOME BACK</h2>
-                <h2>AMBARISH,</h2>
+                <h2>WELCOME TO TRACK</h2>
+                <h2>YOUR CAREER...</h2>
             </div>
         </div>
 
@@ -185,7 +203,7 @@ useEffect(() => {
         <div className={`signup ${isLogin ? "hidden" : ""}`}>
           <div className="logo_place">
             <img className="logo" src={Logo} alt="Logo" />
-            <div className="tobbglebtn" onClick={toggleTheme}>
+            <div className="togglebtn" onClick={toggleTheme}>
               <div className={`toggle-circular-switch ${isDarkMode ? "move-right" : ""}`}></div>
             </div>
           </div>
@@ -216,8 +234,8 @@ useEffect(() => {
               </div>
           </div>
           <div className="signupbtndiv">
-              <button id="signupBtn" onClick={handleSignup}>
-                SignUp
+              <button id="signupBtn" onClick={() => handleAction("Sign Up")}>
+                {loading ? <span className="loader"></span> : "Sign Up"}
               </button>
               <div className="line"></div>
           </div>
@@ -243,7 +261,7 @@ useEffect(() => {
               <h4>
                 Already Registered?
               </h4>
-              <Link id="SignUpLink" onClick={() => handleSlide(true)}>Login</Link>
+              <Link id="SignUpLink" onClick={() => handleSlide(true)}><h2>Login</h2></Link>
             </div>
         </div>
       </div>

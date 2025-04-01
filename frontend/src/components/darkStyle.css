@@ -9,7 +9,7 @@
   }
    */
 
-.main-container{
+.dark-mode .main-container{
     width: 100%;
     height: 100%;
     position: relative;
@@ -17,7 +17,7 @@
     overflow: hidden;
 }
 
-.container{
+.dark-mode .container{
     font-family: 'Istok Web', sans-serif;
     /* background-color: #F8F9FA; */
     background-color: #1E1E2E;
@@ -31,7 +31,7 @@
 }
 
 
-.login, .signup{
+.dark-mode .login, .signup{
     width: 100%;
     height: 100%;
     /* position: absolute; */
@@ -40,7 +40,7 @@
     color: #CCD2D7;
 }
 
-.login {
+.dark-mode .login {
     /* background-color: #F8F9FA;*/
     background-color: #1E1E2E;
     transform: translateX(0);
@@ -48,13 +48,13 @@
     flex-direction: column;
 }
 
-.signup {
+.dark-mode .signup {
     /* background-color: #F8F9FA; */
     background-color: #1E1E2E;
     transform: translateX(0%);
 }
 
-.logo_place{
+.dark-mode .logo_place{
     width: 98%;
     height: 50px;
     display: flex;
@@ -63,12 +63,12 @@
     margin-left: 5px;
 }
 
-.logo{
+.dark-mode .logo{
     height: 38px;
     width: 90px;    
 }
 
-.login_header{
+.dark-mode .login_header{
     height: 100px;
     width: 100%;
     margin-bottom: 25px;
@@ -80,7 +80,7 @@
     padding-top: 30px;
 }
 
-.tobbglebtn {
+.togglebtn {
     height: 23px;
     width: 50px;
     border: 2px solid white;
@@ -93,7 +93,7 @@
     transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
 
-.tobbglebtn:hover{
+.dark-mode .togglebtn:hover{
     box-shadow: 0px 0px 10px rgb(45, 201, 212);
 }
 
@@ -109,13 +109,21 @@
     transition: background-color box-shadow left 0.8s ease-in-out;
 }
 
+.dark-mode .toggle-circular-switch{
+    background-color: white;
+    border: 2px solid rgb(197, 197, 197);
+}
+
 .move-right {
     left: 8px;
 }
 
+.dark-mode header {
+    color: white;
+}
 
 /* 🔥 Optional: Change background when toggling */
-.dark-mode .tobbglebtn {
+.dark-mode .togglebtn {
     background-color: #fff;  
     border-color: #222;
     box-shadow: 0px 0px 10px rgb(27, 28, 28);;
@@ -125,7 +133,7 @@
     background-color: #222;
 }
 
-#email_login,#email_signup, #confirmPassword, #password, #name{
+.dark-mode #email_login,.dark-mode #email_signup, .dark-mode #confirmPassword, .dark-mode #password, .dark-mode #name{
     font-family: 'Istok Web', sans-serif;
     background-color: #374151;
     border-style: none;
@@ -134,16 +142,16 @@
     height: 25px;
 }
 
-#email_login:hover, #email_signup:hover, #confirmPassword:hover, #password:hover, #name:hover {
+.dark-mode #email_login:hover, .dark-mode #email_signup:hover, .dark-mode #confirmPassword:hover, .dark-mode #password:hover, .dark-mode #name:hover {
     background-color: #435A6E;
     border: 2px solid #949EA5;
 }
 
-#labelEmail, #labelPassword{
+.dark-mode #labelEmail, .dark-mode #labelPassword{
     font-weight: 600;
 }
 
-.email-pass-field{
+.dark-mode .email-pass-field{
     height: 180px;
     width: 100%;
     display: flex;
@@ -152,7 +160,7 @@
     align-items: center;
 }
 
-.forget{
+.dark-mode .forget{
     margin-top: 10px;
     height: 20px;
     width: 450px;
@@ -161,7 +169,7 @@
     justify-content: space-between;
 }
 
-.with-error{
+.dark-mode .with-error{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -170,23 +178,23 @@
     width: 450px;
 }
 
-#error_login{
+.dark-mode #error_login{
     color: red;
 }
 
-.forget h5{
+.dark-mode .forget h5{
     color:#CCD2D7;
     font-weight: 300;
     cursor: pointer;
 }
 
 /* Hide the default checkbox */
-.hidden-checkbox {
+.dark-mode .hidden-checkbox {
     display: none;
-  }
+}
   
   /* Style the custom checkbox */
-  .custom-checkbox {
+.dark-mode .custom-checkbox {
     margin-left: 5px;
     display: inline-block;
     width: 20px;
@@ -195,10 +203,10 @@
     border-radius: 3px;
     position: relative;
     cursor: pointer;
-  }
+}
   
   /* Checkbox checked state (adding a check mark) */
-  .hidden-checkbox:checked + .custom-checkbox::after {
+.dark-mode .hidden-checkbox:checked + .custom-checkbox::after {
     content: "✔"; /* Unicode checkmark */
     font-size: 12px;
     color: #373737;
@@ -206,15 +214,15 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
+}
   
-.remember{
+.dark-mode .remember{
     display: flex;
     cursor: pointer;
 }
 
 
-#loginBtn, #signupBtn{
+.dark-mode #loginBtn, .dark-mode #signupBtn{
     margin-top: 15px;
     height: 35px;
     width: 130px;
@@ -223,15 +231,15 @@
     border-radius: 5px;
     border-style: none;
 }
-#loginBtn:hover, #signupBtn:hover{
+.dark-mode #loginBtn:hover,.dark-mode #signupBtn:hover{
     box-shadow: 0px 0px 8px rgb(159, 185, 242);
 }
 
-#signupBtn{
+.dark-mode #signupBtn{
     margin-top: 25px;
 }
 
-.logbtndiv, .signupbtndiv{
+.dark-mode .logbtndiv,.dark-mode .signupbtndiv{
     height: 100px;
     width: 100%;
     display: flex;
@@ -240,18 +248,18 @@
     align-items: center;
 }
 
-.signupbtndiv{
+.dark-mode .signupbtndiv{
     height: 150px;
 }
 
-.line{
+.dark-mode .line{
     margin-top: 15px;
     height: 1px;
     width: 40%;
     background-color: #CCD2D7;
 }
 
-.using_other_sites, .using_other_sites-in-signup{
+.dark-mode .using_other_sites, .dark-mode .using_other_sites-in-signup{
     /* margin-top: px; */
     height: 220px;
     width: 100%;
@@ -262,11 +270,11 @@
     /* border: 2px solid black; */
 }
 
-.using_other_sites-in-signup{
+.dark-mode .using_other_sites-in-signup{
     height: 100px;
 }
 
-.google, .facebook, .apple{
+.dark-mode .google, .dark-mode .facebook, .dark-mode .apple{
     cursor: pointer;
     margin-top: 20px;
     height: 25px;
@@ -276,21 +284,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
 }
 
-#googleId, #facebookId{
+.dark-mode #googleId, .dark-mode #facebookId{
     height: 20px;
     width: 20px;
     margin-right: 10px;
 }
 
-#appleId{
+.dark-mode #appleId{
     height: 20px;
     width: 18px;
     margin-right: 10px;
 }
 
-.go_to_signup{
+.dark-mode .go_to_signup{
     height: 80px;
     width: 100%;
     display: flex;
@@ -301,12 +310,35 @@
     font-family: 'Istok Web', sans-serif;
 }
 
-#SignUpLink{
-  color:#5653FF;  
+
+.dark-mode #SignUpLink {
+    position: relative;
+    text-decoration: none; /* Remove default underline */
 }
 
+.dark-mode #SignUpLink::after {
+    content: ""; /* Required for pseudo-element */
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* Adjust underline position */
+    width: 100%;
+    height: 2px; /* Thickness of underline */
+    background-color: #5653FF; /* Underline color */
+    transform: scaleX(0); /* Initially hidden */
+    transform-origin: left;
+    transition: transform 0.3s ease-in-out;
+}
 
-.slider {
+.dark-mode #SignUpLink:hover::after {
+    transform: scaleX(1); /* Expand underline */
+}
+
+.dark-mode #SignUpLink > h2{
+  color:#5653FF;  
+  transition: transform 0.3s ease-in-out, font-size 0.3s ease-in-out;
+}
+
+.dark-mode .slider {
     position: absolute;
     top: 0;
     left: 0%;
@@ -317,28 +349,28 @@
     transition: transform 0.5s ease-in-out;
 }
 
-#hand_logo{
+.dark-mode #hand_logo{
     margin-top: 100px;
     margin-left: 15px;
     height: 110px;
     width: 109px;
 }
 
-#Aarohan_logo{
+.dark-mode #Aarohan_logo{
     margin-left: 15px;
     color: white;
     font-size: 64px;
     font-family: 'Istok Web', sans-serif;
 }
 
-#line_rect{
+.dark-mode #line_rect{
     width: 70%;
     height: 2px;
     background-color: white;
     margin-left: 50px;
 }
 
-#quote_slide, #welcome_Text{
+.dark-mode #quote_slide, #welcome_Text{
     margin-top: 30px;
     margin-left: 50px;
     color: white;
@@ -347,25 +379,26 @@
     font-weight: 300;
 }
 
-#welcome_Text{
+.dark-mode #welcome_Text{
     font-style: normal;
     font-weight: 400;
 }
 
-.email-pass-confirm-field{
+.dark-mode .email-pass-confirm-field, .dark-mode .email-pass-confirm-field-in-signup{
     height: 120px;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: white;
 }
 
-.pass_in_up{
+.dark-mode .pass_in_up{
     margin-top: 5px;
 }
 
-.go_to_login{
+.dark-mode .go_to_login{
     height: 120px;
     width: 100%;
     margin-top: 10px;
@@ -375,23 +408,24 @@
     align-items: center;
     font-weight: 500;
     font-family: 'Istok Web', sans-serif;
+    color: white;
 }
 
-.login, .signup {
+.dark-mode .login, .signup {
     transition: transform 0.5s ease-in-out;
 }
 
-#loginBtn, #signupBtn {
+.dark-mode #loginBtn, #signupBtn {
     cursor: pointer;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease-in-out;
 }
 
-#loginBtn:hover, #signupBtn:hover {
+.dark-mode #loginBtn:hover, #signupBtn:hover {
     background-color: #3737FF;
 }
 
-.with-error-signup{
+.dark-mode .with-error-signup{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -415,11 +449,11 @@
     /* transition: transform 0.5s ease-in-out;
 } */ 
 
-.move-right {
+.dark-mode .move-right {
     transform: translateX(100%);
 }
 
-.move-left {
+.dark-mode .move-left {
     transform: translateX(0%);
 }
 
@@ -427,3 +461,17 @@
     display: none;
 } */
 
+.loader {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #ffffff;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

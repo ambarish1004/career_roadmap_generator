@@ -26,8 +26,12 @@ body {
     position: relative;
     display: flex;
     overflow: hidden;
+    color: black;
 }
 
+header {
+    color: black;
+}
 
 .login, .signup{
     width: 100%;
@@ -50,10 +54,11 @@ body {
 }
 
 .logo_place{
-    width: 100%;
+    width: 98%;
     height: 50px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     margin-left: 5px;
 }
 
@@ -61,6 +66,55 @@ body {
     height: 38px;
     width: 90px;    
 }
+
+
+.togglebtn {
+    height: 23px;
+    width: 50px;
+    border: 2px solid white;
+    border-radius: 20px;
+    position: relative;
+    background-color: #333;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.togglebtn:hover{
+    box-shadow: 0px 0px 10px rgb(43, 51, 51);
+}
+
+.toggle-circular-switch {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    /* top: 50%; */
+    /* transform: translateY(-50%); */
+    /* left: 0px; Default position */
+    transition: background-color box-shadow left 0.8s ease-in-out;
+}
+
+.move-right {
+    left: 8px;
+}
+
+/* 🔥 Optional: Change background when toggling */
+.togglebtn {
+    background-color: #fff;  
+    border-color: #222;
+}
+
+/* .togglebtn:hover{
+    box-shadow: 0px 0px 10px rgb(27, 28, 28);
+} */
+
+.toggle-circular-switch {
+    background-color: #222;
+}
+
 
 .login_header{
     height: 100px;
@@ -76,7 +130,7 @@ body {
 
 #email_login,#email_signup, #confirmPassword, #password, #name{
     font-family: 'Istok Web', sans-serif;
-    background-color: #c5c4c4;
+    background-color: #e4e4e4;
     border-style: none;
     border-radius: 5px;
     width: 450px;
@@ -197,15 +251,19 @@ body {
     background-color: rgb(46, 46, 46);
 }
 
-.using_other_sites{
+.using_other_sites-in-signup, .using_other_sites{
     /* margin-top: px; */
-    height: 180px;
+    height: 220px;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     /* border: 2px solid black; */
+}
+
+.using_other_sites-in-signup{
+    height: 100px;
 }
 
 .google, .facebook, .apple{
@@ -218,6 +276,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: black;
 }
 
 #googleId, #facebookId{
@@ -243,8 +302,31 @@ body {
     font-family: 'Istok Web', sans-serif;
 }
 
-#SignUpLink{
-  color:#0F0D8B;  
+#SignUpLink {
+    position: relative;
+    text-decoration: none; /* Remove default underline */
+}
+
+#SignUpLink::after {
+    content: ""; /* Required for pseudo-element */
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* Adjust underline position */
+    width: 100%;
+    height: 2px; /* Thickness of underline */
+    background-color: #131269; /* Underline color */
+    transform: scaleX(0); /* Initially hidden */
+    transform-origin: left;
+    transition: transform 0.3s ease-in-out;
+}
+
+#SignUpLink:hover::after {
+    transform: scaleX(1); /* Expand underline */
+}
+
+#SignUpLink > h2{
+  color:#131269;  
+  transition: transform 0.3s ease-in-out, font-size 0.3s ease-in-out;
 }
 
 
@@ -301,6 +383,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: black;
 }
 
 .pass_in_up{
@@ -308,14 +391,16 @@ body {
 }
 
 .go_to_login{
-    height: 80px;
+    height: 120px;
     width: 100%;
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-weight: 500;
     font-family: 'Istok Web', sans-serif;
+    color: black;
 }
 
 .login, .signup {
@@ -369,3 +454,18 @@ body {
 /* .hidden {
     display: none;
 } */
+
+.loader {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #ffffff;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

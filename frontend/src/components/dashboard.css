@@ -188,6 +188,7 @@ navbar{
 .notification-logo, .msg-logo{
     height:31px;
     width:31px;
+    cursor: pointer;
     /* color: white; */
 }
 
@@ -196,7 +197,7 @@ navbar{
     width:31px;
     border-radius: 100%;
     border: 2px solid white;
-
+    cursor: pointer;
 }
 
 #user-img-imgtag{
@@ -221,7 +222,7 @@ navbar{
 }
 
 #Aarohan-quote{
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 300;
 }
 
