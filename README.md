@@ -1,6 +1,6 @@
-## Career Roadmap Generator
+# Career Roadmap Generator
 
-# About
+## About
 
 This project is about tracking your career. The platform allows users to explore roadmaps created by experienced professionals, helping them decide the best direction for their growth. Once they start their journey, they can track their progress—how much they’ve learned, what’s left to cover, and the opportunities available at their current skill level, including job roles, salaries, and required qualifications.
 
