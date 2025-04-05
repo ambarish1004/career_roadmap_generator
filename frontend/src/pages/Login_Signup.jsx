@@ -95,7 +95,7 @@ useEffect(() => {
       setError(err.response?.data?.message || "An error occurred");
     }
   };
-//  {isDarkMode ? "Light Mode" : "Dark Mode"}
+ {isDarkMode ? "Light Mode" : "Dark Mode"}
   return (
     <div className="main-container">
       <div className="container">
@@ -111,22 +111,24 @@ useEffect(() => {
         </header>
         <div className="email-pass-field">
           <div className="email_in">
-            <h4 id="labelEmail" htmlFor="email_login">Email:</h4>
+            {/* <h4 id="labelEmail" htmlFor="email_login">Enter Your Email:</h4> */}
             <input
-              className="border-2 border-black rounded p-2 w-3/4 mt-4"
+              className="border-2 border-black rounded p-5 w-3/4 mt-4"
               id="email_login"
               type="email"
+              placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <br/>
           <div className="pass_in">
-            <h4 id="labelPassword" htmlFor="password">Password:</h4>
+            {/* <h4 id="labelPassword" htmlFor="password">Password:</h4> */}
               <input
                 className="border-2 border-black rounded p-2 w-3/4 mt-4"
                 id="password"
                 type="password"
+                placeholder="Enter password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
@@ -146,7 +148,7 @@ useEffect(() => {
               <button id="loginBtn" className="bg-blue-600 text-white rounded px-6 py-2 mt-4 hover:bg-blue-800" onClick={handleLogin}>
                 Login
               </button>
-              <div className="line"></div>
+              {/* <div className="line"></div> */}
           </div>
         </div>
 
@@ -210,34 +212,35 @@ useEffect(() => {
           <header className="login_header">
             <h1>Signup</h1>
           </header>
-          <div className="email-pass-confirm-field">
+          <div className="email-pass-confirm-field-in-signup">
             <div className="name_in">
-              <h4 htmlFor="name">Name:</h4>
+              {/* <h4 htmlFor="name">Name:</h4> */}
               <input
                 id="name"
                 type="text"
+                placeholder="Enter name here"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
             </div>
             <div className="email_in">
-                <h4 htmlFor="email_signup">Email:</h4>
-                <input id="email_signup" type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
+                {/* <h4 htmlFor="email_signup">Email:</h4> */}
+                <input id="email_signup" type="email" placeholder="Enter your email" name="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
             </div>
             <div className="pass_in_up">
-                <h4 htmlFor="password">Password:</h4>
-                <input id="password" type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+                {/* <h4 htmlFor="password">Password:</h4> */}
+                <input id="password" type="password" placeholder="Enter password" name="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
             </div>
             <div className="pass_in_up">
-                <h4 htmlFor="password">Confirm Password:</h4>
-                <input id="confirmPassword" type="password" name="confirmPassword" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}/>
+                {/* <h4 htmlFor="password">Confirm Password:</h4> */}
+                <input id="confirmPassword" type="password" placeholder="Confirm password" name="confirmPassword" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}/>
               </div>
           </div>
           <div className="signupbtndiv">
-              <button id="signupBtn" onClick={() => handleAction("Sign Up")}>
+              <button id="signupBtn" onClick={handleSignup}>
                 {loading ? <span className="loader"></span> : "Sign Up"}
               </button>
-              <div className="line"></div>
+              {/* <div className="line"></div> */}
           </div>
           <div className="error-field">
             <div className="with-error-signup">

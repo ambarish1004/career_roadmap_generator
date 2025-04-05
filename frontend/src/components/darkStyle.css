@@ -139,7 +139,8 @@
     border-style: none;
     border-radius: 5px;
     width: 450px;
-    height: 25px;
+    height: 35px;
+    padding-left: 5px;
 }
 
 .dark-mode #email_login:hover, .dark-mode #email_signup:hover, .dark-mode #confirmPassword:hover, .dark-mode #password:hover, .dark-mode #name:hover {
@@ -222,25 +223,29 @@
 }
 
 
+
 .dark-mode #loginBtn, .dark-mode #signupBtn{
     margin-top: 15px;
     height: 35px;
-    width: 130px;
+    width: 450px;
     color: white;
     background-color: #5653FF;
     border-radius: 5px;
     border-style: none;
 }
+
+
 .dark-mode #loginBtn:hover,.dark-mode #signupBtn:hover{
     box-shadow: 0px 0px 8px rgb(159, 185, 242);
 }
 
 .dark-mode #signupBtn{
-    margin-top: 25px;
+    margin-top: 45px;
 }
 
 .dark-mode .logbtndiv,.dark-mode .signupbtndiv{
-    height: 100px;
+    /* padding-top: 25px; */
+    height: 80px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -249,18 +254,33 @@
 }
 
 .dark-mode .signupbtndiv{
-    height: 150px;
+    margin-top: 10px;
+    height: 80px;
+} 
+
+.dark-mode #loginBtn, .dark-mode #signupBtn {
+    /* margin-top: 15px; */
+    height: 35px;
+    width: 450px;
+    color: white;
+    background-color: #5653FF; /* Keep the original solid blue */
+    border-radius: 5px;
+    border-style: none;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background 1s ease-in-out;
+    position: relative;
+    overflow: hidden;
 }
 
-.dark-mode .line{
-    margin-top: 15px;
-    height: 1px;
-    width: 40%;
-    background-color: #CCD2D7;
+/* Gradient Effect on Hover */
+.dark-mode #loginBtn:hover, .dark-mode #signupBtn:hover {
+    background: linear-gradient(to left, #5653FF, #e100ff);
 }
+
 
 .dark-mode .using_other_sites, .dark-mode .using_other_sites-in-signup{
-    /* margin-top: px; */
+    margin-top: 15px;
     height: 220px;
     width: 100%;
     display: flex;
@@ -271,13 +291,13 @@
 }
 
 .dark-mode .using_other_sites-in-signup{
-    height: 100px;
+    height: 150px;
 }
 
-.dark-mode .google, .dark-mode .facebook, .dark-mode .apple{
+.dark-mode .google, .dark-mode .facebook, .dark-mode .apple {
     cursor: pointer;
-    margin-top: 20px;
-    height: 25px;
+    margin-top: 15px;
+    height: 35px;
     width: 450px;
     border: 2px solid #949EA5;
     border-radius: 5px;
@@ -285,7 +305,22 @@
     justify-content: center;
     align-items: center;
     color: white;
+    transition: transform 0.3s ease-in-out; /* Smooth movement */
 }
+
+/* Move slightly to the right on hover */
+.dark-mode .google:hover {
+    transform: translateX(10px);
+}
+
+.dark-mode .facebook:hover {
+    transform: translateX(10px);
+}
+
+.dark-mode .apple:hover {
+    transform: translateX(10px);
+}
+
 
 .dark-mode #googleId, .dark-mode #facebookId{
     height: 20px;
@@ -300,7 +335,7 @@
 }
 
 .dark-mode .go_to_signup{
-    height: 80px;
+    height: 40px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -344,7 +379,7 @@
     left: 0%;
     width: 50%;
     height: 100%;
-    background-color: #0F0D8B;
+    background: linear-gradient(to bottom, #0a035c 40%, #f5a14c );
     z-index: 1;
     transition: transform 0.5s ease-in-out;
 }
@@ -385,7 +420,7 @@
 }
 
 .dark-mode .email-pass-confirm-field, .dark-mode .email-pass-confirm-field-in-signup{
-    height: 120px;
+    height: 140px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -394,12 +429,16 @@
     color: white;
 }
 
+.dark-mode .email_in{
+    margin-top: 15px;
+}
+
 .dark-mode .pass_in_up{
-    margin-top: 5px;
+    margin-top: 15px;
 }
 
 .dark-mode .go_to_login{
-    height: 120px;
+    height: 80px;
     width: 100%;
     margin-top: 10px;
     display: flex;
