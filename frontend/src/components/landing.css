@@ -1,0 +1,126 @@
+/* Reset styles */
+body, html, #root {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0f172a;
+    color: white;
+  }
+  
+  /* Canvas stays in background */
+  .landing-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+  }
+  
+  /* Wrapper holds all content on top of canvas */
+  .landing-wrapper {
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* Hero section styles */
+  .hero-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 2rem;
+  }
+  
+  .hero-section h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-section h1 span {
+    color: #7f9cf5;
+  }
+  
+  .hero-section p {
+    font-size: 1.25rem;
+    color: #cbd5e1;
+    max-width: 600px;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .hero-buttons button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .hero-buttons button:first-child {
+    background-color: #6366f1;
+    color: white;
+  }
+  
+  .hero-buttons button:first-child:hover {
+    background-color: #4f46e5;
+  }
+  
+  .hero-buttons button:last-child {
+    background-color: transparent;
+    border: 2px solid #7f9cf5;
+    color: #7f9cf5;
+  }
+  
+  .hero-buttons button:last-child:hover {
+    background-color: #7f9cf5;
+    color: white;
+  }
+  
+  /* Roadmap section */
+  .roadmap-section {
+    background-color: #1e293b;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  .roadmap-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .roadmap-section p {
+    color: #94a3b8;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .roadmap-placeholder {
+    border: 2px dashed #7f9cf5;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: #0f172a;
+    color: #7f9cf5;
+    font-size: 1.2rem;
+    max-width: 900px;
+    margin: auto;
+  }
+  
+  /* Optional features section */
+  .features-section {
+    background-color: #0f172a;
+    padding: 4rem 2rem;
+  }
+  
