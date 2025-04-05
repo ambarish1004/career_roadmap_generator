@@ -101,3 +101,27 @@
 2025-03-07T10:40:44.275Z [INFO]: Server running on port 5000
 2025-03-07T19:16:01.633Z [INFO]: Server running on port 5000
 2025-03-08T07:13:55.541Z [INFO]: Closing server...
+2025-03-09T09:29:52.873Z [INFO]: Server running on port 5000
+2025-04-01T11:09:02.858Z [INFO]: Server running on port 5000
+2025-04-01T12:45:04.436Z [ERROR]: 903D0000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\ws\deps\openssl\openssl\ssl\record\rec_layer_s3.c:1590:SSL alert number 80
+ - /api/auth/signup - POST - ::1
+2025-04-01T12:45:30.895Z [ERROR]: 903D0000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\ws\deps\openssl\openssl\ssl\record\rec_layer_s3.c:1590:SSL alert number 80
+ - /api/auth/signup - POST - ::1
+2025-04-01T12:45:31.948Z [ERROR]: 903D0000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\ws\deps\openssl\openssl\ssl\record\rec_layer_s3.c:1590:SSL alert number 80
+ - /api/auth/signup - POST - ::1
+2025-04-01T12:45:32.152Z [ERROR]: 903D0000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\ws\deps\openssl\openssl\ssl\record\rec_layer_s3.c:1590:SSL alert number 80
+ - /api/auth/signup - POST - ::12025-04-04T11:36:25.377Z [INFO]: Server running on port 5000
+2025-04-05T10:56:12.401Z [INFO]: Server running on port 5000
+2025-04-05T11:09:32.119Z [INFO]: Server running on port 5000
+2025-04-05T11:47:20.028Z [INFO]: Closing server...
+2025-04-05T11:47:41.865Z [INFO]: Server running on port 5000
+2025-04-05T11:49:56.418Z [INFO]: Closing server...
+2025-04-05T11:50:04.940Z [INFO]: Server running on port 5000
+2025-04-05T14:02:42.896Z [ERROR]: Model.findById() no longer accepts a callback - /api/auth/google - GET - ::1
+2025-04-05T14:02:42.993Z [ERROR]: Model.findById() no longer accepts a callback - /favicon.ico - GET - ::1
+2025-04-05T14:03:28.902Z [ERROR]: Model.findById() no longer accepts a callback - /api/auth/google - GET - ::1
+2025-04-05T14:03:28.963Z [ERROR]: Model.findById() no longer accepts a callback - /favicon.ico - GET - ::1
+2025-04-05T14:05:46.730Z [ERROR]: Model.findById() no longer accepts a callback - /dashboard - GET - ::1
+2025-04-05T14:05:46.771Z [ERROR]: Model.findById() no longer accepts a callback - /favicon.ico - GET - ::1
+2025-04-05T14:06:20.173Z [INFO]: Closing server...
+2025-04-05T14:06:30.363Z [INFO]: Server running on port 5000

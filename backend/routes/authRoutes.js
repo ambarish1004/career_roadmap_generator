@@ -357,63 +357,72 @@ router.get("/apple/callback", passport.authenticate("apple", {
 }));
 
 // ✅ Signup Route
-router.post(
-  "/signup",
-  [
-    body("name").notEmpty().withMessage("Name is required"),
-    body("email").isEmail().withMessage("Invalid email address"),
-    body("password")
-      .isLength({ min: 8 })
-      .withMessage("Password must be at least 8 characters"),
-  ],
-  asyncHandler(async (req, res) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
-    }
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASSWORD
+  },
+  tls: {
+    // Updated TLS configuration
+    ciphers: 'TLSv1.2',
+    minVersion: 'TLSv1.2',
+    rejectUnauthorized: false
+  }
+});
 
+// Signup Route (Fixed)
+router.post('/signup', async (req, res) => {
+  try {
     const { name, email, password } = req.body;
 
-    // Check if user exists
-    const userExists = await User.findOne({ email });
-    if (userExists) {
-      return res.status(409).json({ message: "User already exists" });
+    // Input validation
+    if (!name || !email || !password) {
+      return res.status(400).json({ message: 'All fields are required' });
     }
 
-    // Hash password
-    const hashedPassword = await bcrypt.hash(password, 12);
-    const verificationToken = crypto.randomBytes(32).toString("hex");
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      return res.status(400).json({ message: 'User already exists' });
+    }
 
-    // Create user with verification token
+    const hashedPassword = await bcrypt.hash(password, 12);
     const newUser = new User({
       name,
       email,
       password: hashedPassword,
-      emailVerificationToken: verificationToken,
-      isVerified: false,
+      isVerified: false
     });
 
     await newUser.save();
 
+    // Generate verification token
+    const token = jwt.sign(
+      { userId: newUser._id },
+      process.env.JWT_SECRET,
+      { expiresIn: '1h' }
+    );
+
     // Send verification email
-    const verificationUrl = `${req.protocol}://${req.get("host")}/api/auth/verify-email/${verificationToken}`;
-    const transporter = nodemailer.createTransport({
-      service: "Gmail",
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
-
+    const verificationUrl = `${process.env.BASE_URL}/verify-email?token=${token}`;
+    
     await transporter.sendMail({
+      from: `"Your App" <${process.env.EMAIL_USER}>`,
       to: email,
-      subject: "Verify Your Email",
-      text: `Click the link to verify your email: ${verificationUrl}`,
+      subject: 'Email Verification',
+      html: `Click <a href="${verificationUrl}">here</a> to verify your email.`
     });
 
-    res.status(201).json({ message: "Signup successful. Check your email for verification link." });
-  })
-);
+    res.status(201).json({
+      message: 'User created. Check email for verification link.',
+      redirectUrl: '/dashboard'
+    });
+
+  } catch (error) {
+    console.error('Signup error:', error);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
 
 // ✅ Email Verification Route
 router.get("/verify-email/:token", asyncHandler(async (req, res) => {
