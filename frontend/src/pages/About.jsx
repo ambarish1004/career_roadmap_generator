@@ -1,16 +1,26 @@
+import FluidCanvas from "./FluidCanvas";
+import "../components/about.css";
+import SimpleButton from "./SimpleButton";
+
 const About = () => {
-    return (
-      <div className="page-container">
+  return (
+    <div className="about-wrapper">
+      <FluidCanvas />
+
+      <div className="about-content">
         <h1>About Aarohan</h1>
         <p>
-          Aarohan is an AI-powered platform designed to guide individuals through their career journey with interactive roadmaps, expert insights, and personalized recommendations. 
+          Aarohan is a modern platform guiding individuals through personalized
+          career journeys — built with intelligence, clarity, and care.
         </p>
         <p>
-          We’re on a mission to make career planning accessible, transparent, and engaging for everyone.
+          Dive into structured roadmaps, curated insights, and actionable next
+          steps to build your future with confidence.
         </p>
+        <SimpleButton>Explore Roadmap</SimpleButton>
       </div>
-    );
-  };
-  
-  export default About;
-  
+    </div>
+  );
+};
+
+export default About;

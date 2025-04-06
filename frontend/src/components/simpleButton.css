@@ -1,0 +1,17 @@
+.simple-button {
+  padding: 0.8rem 1.8rem;
+  background-color: #ffffff10;
+  color: #fff;
+  font-size: 1rem;
+  border: 1px solid #ffffff30;
+  border-radius: 6px;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  margin-top: 1.5rem;
+}
+
+.simple-button:hover {
+  background-color: #ffffff20;
+  transform: translateY(-2px);
+}
