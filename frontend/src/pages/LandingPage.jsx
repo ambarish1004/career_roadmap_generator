@@ -131,7 +131,7 @@ const LandingPage = () => {
               </p>
               <div className="hero-buttons">
                 <button onClick={() => navigate("/login")}>Login</button>
-                <button onClick={() => navigate("/signup")}>Sign Up</button>
+                <button onClick={() => navigate("/login")}>Sign Up</button>
               </div>
             </section>
           </section>
