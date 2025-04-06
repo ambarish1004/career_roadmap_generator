@@ -1,0 +1,54 @@
+.featured-roadmap-section {
+    padding: 4rem 2rem;
+    background-color: #0f172a;
+    text-align: center;
+    color: white;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .section-desc {
+    color: #94a3b8;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    font-size: 1.1rem;
+  }
+  
+  .roadmap-preview {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .roadmap-node {
+    background-color: #1e293b;
+    padding: 1.25rem 1.5rem;
+    border-radius: 1rem;
+    width: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  }
+  
+  .roadmap-node:hover {
+    transform: translateY(-6px);
+    background-color: #334155;
+  }
+  
+  .icon {
+    margin-bottom: 0.75rem;
+    color: #7f9cf5;
+  }
+  
+  .label {
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  

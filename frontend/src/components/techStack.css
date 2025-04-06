@@ -1,0 +1,40 @@
+.tech-stack-section {
+    background-color: #f8fafc;
+    padding: 3rem 1rem;
+    text-align: center;
+  }
+  
+  .tech-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 2rem;
+  }
+  
+  .logo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .logo-card {
+    width: 100px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+  }
+  
+  .logo-card img {
+    max-height: 40px;
+    max-width: 100%;
+    object-fit: contain;
+  }
+  
+  .logo-card:hover {
+    opacity: 1;
+  }
+  

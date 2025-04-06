@@ -1,33 +1,42 @@
-import { Briefcase, Compass, Users, BarChart, Brain, Target } from "lucide-react"; // or use Heroicons
+import React from "react";
+import {
+  Briefcase,
+  Compass,
+  Users,
+  BarChart,
+  Brain,
+  Target,
+} from "lucide-react";
+import "../components/features.css";
 
 const features = [
   {
-    icon: <Compass className="w-8 h-8 text-indigo-400" />,
+    icon: <Compass className="icon" />,
     title: "Personalized Roadmaps",
     description: "Get step-by-step learning paths tailored to your goals.",
   },
   {
-    icon: <Brain className="w-8 h-8 text-indigo-400" />,
+    icon: <Brain className="icon" />,
     title: "AI Career Guidance",
     description: "Smart suggestions based on your skills and interests.",
   },
   {
-    icon: <Users className="w-8 h-8 text-indigo-400" />,
+    icon: <Users className="icon" />,
     title: "Community Groups",
     description: "Learn together with peers, mentors, and role models.",
   },
   {
-    icon: <BarChart className="w-8 h-8 text-indigo-400" />,
+    icon: <BarChart className="icon" />,
     title: "Skill Tracking",
     description: "Track your progress and master new skills over time.",
   },
   {
-    icon: <Briefcase className="w-8 h-8 text-indigo-400" />,
+    icon: <Briefcase className="icon" />,
     title: "Job Insights",
     description: "Understand roles, salaries, and job demand in real-time.",
   },
   {
-    icon: <Target className="w-8 h-8 text-indigo-400" />,
+    icon: <Target className="icon" />,
     title: "Goal-Based Learning",
     description: "Set goals and let the roadmap guide your journey.",
   },
@@ -35,24 +44,19 @@ const features = [
 
 const FeaturesSection = () => {
   return (
-    <section className="py-20 bg-[#0f172a] text-white relative z-10">
-      <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
-          What You’ll Get
-        </h2>
-        <p className="text-gray-400 text-md md:text-lg mb-12">
+    <section className="features-container">
+      <div className="features-content">
+        <h2 className="features-heading">What You’ll Get</h2>
+        <p className="features-subtext">
           Tools, guidance, and a powerful community — everything you need to grow.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div className="features-grid">
           {features.map((feature, index) => (
-            <div
-              key={index}
-              className="bg-[#1e293b] rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
-            >
-              <div className="mb-4">{feature.icon}</div>
-              <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-              <p className="text-gray-400 text-sm">{feature.description}</p>
+            <div className="feature-card" key={index}>
+              <div className="feature-icon">{feature.icon}</div>
+              <h3 className="feature-title">{feature.title}</h3>
+              <p className="feature-description">{feature.description}</p>
             </div>
           ))}
         </div>

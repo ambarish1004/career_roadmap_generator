@@ -1,126 +1,161 @@
-/* Reset styles */
 body, html, #root {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #0f172a;
-    color: white;
-  }
-  
-  /* Canvas stays in background */
-  .landing-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    pointer-events: none;
-  }
-  
-  /* Wrapper holds all content on top of canvas */
-  .landing-wrapper {
-    position: relative;
-    z-index: 2;
-  }
-  
-  /* Hero section styles */
-  .hero-section {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 4rem 2rem;
-  }
-  
-  .hero-section h1 {
-    font-size: 3rem;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-  }
-  
-  .hero-section h1 span {
-    color: #7f9cf5;
-  }
-  
-  .hero-section p {
-    font-size: 1.25rem;
-    color: #cbd5e1;
-    max-width: 600px;
-    margin-bottom: 2rem;
-  }
-  
-  .hero-buttons {
-    display: flex;
-    gap: 1rem;
-  }
-  
-  .hero-buttons button {
-    padding: 0.75rem 1.5rem;
-    border-radius: 9999px;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .hero-buttons button:first-child {
-    background-color: #6366f1;
-    color: white;
-  }
-  
-  .hero-buttons button:first-child:hover {
-    background-color: #4f46e5;
-  }
-  
-  .hero-buttons button:last-child {
-    background-color: transparent;
-    border: 2px solid #7f9cf5;
-    color: #7f9cf5;
-  }
-  
-  .hero-buttons button:last-child:hover {
-    background-color: #7f9cf5;
-    color: white;
-  }
-  
-  /* Roadmap section */
-  .roadmap-section {
-    background-color: #1e293b;
-    padding: 4rem 2rem;
-    text-align: center;
-  }
-  
-  .roadmap-section h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-  
-  .roadmap-section p {
-    color: #94a3b8;
-    margin-bottom: 2rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .roadmap-placeholder {
-    border: 2px dashed #7f9cf5;
-    padding: 2rem;
-    border-radius: 1rem;
-    background-color: #0f172a;
-    color: #7f9cf5;
-    font-size: 1.2rem;
-    max-width: 900px;
-    margin: auto;
-  }
-  
-  /* Optional features section */
-  .features-section {
-    background-color: #0f172a;
-    padding: 4rem 2rem;
-  }
-  
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0f172a;
+  color: white;
+}
+
+.landing-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.landing-wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.hero-section h1 span {
+  color: #7f9cf5;
+}
+
+.hero-section p {
+  font-size: 1.25rem;
+  color: #cbd5e1;
+  max-width: 600px;
+  margin-bottom: 2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.hero-buttons button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.hero-buttons button:first-child {
+  background-color: #6366f1;
+  color: white;
+}
+
+.hero-buttons button:first-child:hover {
+  background-color: #4f46e5;
+}
+
+.hero-buttons button:last-child {
+  background-color: transparent;
+  border: 2px solid #7f9cf5;
+  color: #7f9cf5;
+}
+
+.hero-buttons button:last-child:hover {
+  background-color: #7f9cf5;
+  color: white;
+}
+
+.roadmap-section {
+  background-color: #1e293b;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.roadmap-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.roadmap-section p {
+  color: #94a3b8;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.roadmap-placeholder {
+  border: 2px dashed #7f9cf5;
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: #0f172a;
+  color: #7f9cf5;
+  font-size: 1.2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+.features-section {
+  background-color: #0f172a;
+  padding: 4rem 2rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.hero-buttons button {
+  transition: all 0.3s ease;
+}
+
+.hero-buttons button:hover {
+  transform: scale(1.05);
+  background-color: #4f46e5;
+  color: white;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+
+
+.page-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  color: #f1f5f9;
+  line-height: 1.7;
+}
+.page-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #7f9cf5;
+}

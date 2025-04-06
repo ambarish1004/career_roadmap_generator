@@ -1,0 +1,38 @@
+.final-cta-section {
+    background: linear-gradient(to right, #6366f1, #7f9cf5);
+    color: white;
+    padding: 4rem 1rem;
+    text-align: center;
+  }
+  
+  .final-cta-container {
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .final-cta-container h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .final-cta-container p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+  }
+  
+  .cta-btn {
+    background-color: white;
+    color: #4f46e5;
+    padding: 0.75rem 1.5rem;
+    font-weight: bold;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta-btn:hover {
+    background-color: #e0e7ff;
+  }
+  
