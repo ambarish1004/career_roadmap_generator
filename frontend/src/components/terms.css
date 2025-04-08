@@ -1,0 +1,64 @@
+/* Background animation */
+.animated-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 30%, #20253a, transparent 40%),
+                radial-gradient(circle at 80% 70%, #1a1f3c, transparent 40%);
+    background-color: #0f172a;
+    z-index: 0;
+    animation: floatBG 20s ease-in-out infinite alternate;
+  }
+  
+  /* Animation keyframes */
+  @keyframes floatBG {
+    0% {
+      background-position: 0% 50%, 100% 50%;
+    }
+    100% {
+      background-position: 100% 50%, 0% 50%;
+    }
+  }
+  
+  /* Content container */
+  .terms-container {
+    position: relative;
+    min-height: 100vh;
+    padding: 4rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    color: #f1f5f9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Content card */
+  .terms-content {
+    background: rgba(15, 23, 42, 0.85);
+    border-radius: 1rem;
+    padding: 3rem;
+    max-width: 800px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    z-index: 2;
+  }
+  
+  .terms-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #93c5fd;
+  }
+  
+  .terms-content h2 {
+    margin-top: 1.5rem;
+    color: #bfdbfe;
+    font-size: 1.4rem;
+  }
+  
+  .terms-content p {
+    margin-top: 0.5rem;
+    line-height: 1.6;
+  }
+  

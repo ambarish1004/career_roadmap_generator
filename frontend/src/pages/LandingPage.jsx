@@ -8,8 +8,6 @@ import TestimonialsSection from "./TestimonialsSection";
 import CommunityHighlightSection from "./CommunityHighlightSection";
 import "../components/landing.css";
 import HowItWorksSection from "./HowItWorksSection";
-// import FeaturedRoadmap from "./FeaturedRoadmap";
-// import NewsletterSignup from "./NewsletterSignup";
 import JobRoleSpotlight from "./JobRoleSpotlight";
 import TechUsed from "./TechUsed";
 import FinalCTA from "./FinalCTA";
@@ -22,7 +20,7 @@ import CustomCursor from "./CustomCursor";
 const LandingPage = () => {
   const canvasRef = useRef();
   const navigate = useNavigate();
-  const [scroll, setScroll] = useState(0); // For scroll progress
+  const [scroll, setScroll] = useState(0);
 
   useEffect(() => {
     const scene = new THREE.Scene();
@@ -108,15 +106,14 @@ const LandingPage = () => {
       <div
         style={{ width: `${scroll}%` }}
         className="fixed top-0 left-0 h-1 bg-indigo-500 z-50 transition-all"
-      ></div>
+      />
 
-      <div className="landing-wrapper">
-        {/* Animated Cursor */}
-        <CustomCursor />
+      {/* Background Canvas - separate from content */}
+      <canvas ref={canvasRef} className="landing-canvas" />
 
-        {/* Background Canvas */}
-        <canvas ref={canvasRef} className="landing-canvas" />
+      <CustomCursor />
 
+      <main className="landing-wrapper">
         {/* Hero Section */}
         <Parallax bgImage="/assets/roadmap-bg.jpg" strength={300}>
           <section className="hero-section py-32 text-white text-center">
@@ -137,54 +134,49 @@ const LandingPage = () => {
           </section>
         </Parallax>
 
-        {/* Roadmap Placeholder */}
-        <section className="roadmap-section">
-          <h2>Interactive Roadmap (Coming Soon)</h2>
-          <p>
-            A 3D branching roadmap to visualize your journey will appear here.
-            Stay tuned!
-          </p>
-          <div className="roadmap-placeholder">
-            [ Placeholder for 3D Roadmap Visualization ]
-          </div>
-        </section>
-
-        <RevealWrapper>
-          {/* Features */}
-          <section className="features-section">
-            <FeaturesSection />
-          </section>
-
-          {/* Stats */}
-          <StatSection />
-
-          {/* Mini Roadmap */}
+        {/* Scroll-based transform container */}
+        <div
+          className="scroll-container"
+          style={{
+            transform: `rotateX(${scroll * 0.1}deg) translateZ(${Math.sin(
+              scroll * 0.05
+            ) * 20}px)`,
+            transition: "transform 0.2s ease-out",
+          }}
+        >
           <section className="roadmap-section">
-            <MiniRoadmap />
+            <h2>Interactive Roadmap (Coming Soon)</h2>
+            <p>
+              A 3D branching roadmap to visualize your journey will appear here.
+              Stay tuned!
+            </p>
+            <div className="roadmap-placeholder">
+              [ Placeholder for 3D Roadmap Visualization ]
+            </div>
           </section>
 
-          {/* Testimonials */}
-          <TestimonialsSection />
+          <RevealWrapper>
+            <section className="features-section">
+              <FeaturesSection />
+            </section>
 
-          {/* Community */}
-          <CommunityHighlightSection />
-        </RevealWrapper>
+            <StatSection />
 
-        {/* How it Works */}
-        <HowItWorksSection />
+            <section className="roadmap-section">
+              <MiniRoadmap />
+            </section>
 
-        {/* Spotlight */}
-        <JobRoleSpotlight />
+            <TestimonialsSection />
+            <CommunityHighlightSection />
+          </RevealWrapper>
 
-        {/* Tech Stack */}
-        <TechUsed />
-
-        {/* Final Call to Action */}
-        <FinalCTA />
-
-        {/* Footer */}
-        <Footer />
-      </div>
+          <HowItWorksSection />
+          <JobRoleSpotlight />
+          <TechUsed />
+          <FinalCTA />
+          <Footer />
+        </div>
+      </main>
     </motion.div>
   );
 };

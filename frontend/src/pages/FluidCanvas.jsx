@@ -15,7 +15,7 @@ const FluidCanvas = () => {
             width: "100vw",
             height: "100vh",
             zIndex: 0,
-            background: "#000"
+            // background: "#000"
         }}
         >
         <ambientLight intensity={2} />

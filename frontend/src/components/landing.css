@@ -1,3 +1,9 @@
+
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
 body, html, #root {
   margin: 0;
   padding: 0;
@@ -6,6 +12,11 @@ body, html, #root {
   background-color: #0f172a;
   color: white;
 }
+
+html, body {
+  height: auto;
+}
+
 
 .landing-canvas {
   position: fixed;
@@ -158,4 +169,13 @@ html {
   font-size: 2.5rem;
   margin-bottom: 1rem;
   color: #7f9cf5;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+html, body {
+  height: auto;
 }

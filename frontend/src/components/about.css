@@ -1,12 +1,4 @@
-.about-wrapper {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    background: transparent;
-  }
-  
-  .about-content {
+  /* .about-content {
     position: relative;
     z-index: 2;
     max-width: 700px;
@@ -16,7 +8,7 @@
     color: #eee;
     top: 50%;
     transform: translateY(-50%);
-  }
+  } */
   
   .about-content h1 {
     font-size: 2.8rem;
@@ -29,5 +21,71 @@
     line-height: 1.6;
     color: #ccc;
     margin-bottom: 1rem;
+  }
+  
+
+  .about-board {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+    margin-top: 2rem;
+  }
+  
+  .about-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(6px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+  }
+  
+  .about-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: #ffffff;
+  }
+  
+  .about-card p {
+    color: #ccc;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .about-wrapper {
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    overflow: hidden;
+    background: transparent;
+  }
+  
+  /* NEW - make about-content scrollable with natural height */
+  .about-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 5rem 1.5rem 3rem 1.5rem;
+    text-align: center;
+    color: #eee;
+  }
+  
+  
+  .scroll-path {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3000px;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 1;
   }
   
